@@ -68,6 +68,6 @@ export function isCategory(obj: CosmicObject): obj is Category {
   return obj.type === 'categories';
 }
 
-// Utility types
-export type OptionalMetadata<T> = Partial<T['metadata']>;
+// Utility types - Fixed with proper type constraint
+export type OptionalMetadata<T extends CosmicObject> = Partial<T['metadata']>;
 export type GameCardData = Pick<Game, 'id' | 'title' | 'slug' | 'metadata'>;
