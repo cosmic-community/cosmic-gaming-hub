@@ -68,6 +68,6 @@ export function isCategory(obj: CosmicObject): obj is Category {
   return obj.type === 'categories';
 }
 
-// Utility types - Fixed with proper type constraint
-export type OptionalMetadata<T extends CosmicObject> = Partial<T['metadata']>;
+// Utility types - Fixed TypeScript generic indexing error
+export type OptionalMetadata<T extends CosmicObject> = T extends CosmicObject ? Partial<T['metadata']> : never;
 export type GameCardData = Pick<Game, 'id' | 'title' | 'slug' | 'metadata'>;
