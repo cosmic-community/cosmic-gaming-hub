@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-white min-h-screen;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .game-card-hover {
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+  
+  .difficulty-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .difficulty-easy {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .difficulty-medium {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .difficulty-hard {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .category-filter-active {
+    @apply bg-primary text-white border-primary;
+  }
+  
+  .category-filter-inactive {
+    @apply bg-surface border-secondary text-secondary-light hover:border-primary hover:text-primary;
+  }
+  
+  .popular-badge {
+    @apply absolute top-3 right-3 bg-accent-orange text-white px-2 py-1 rounded-full text-xs font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-gaming {
+    @apply bg-gradient-to-br from-background via-surface to-background;
+  }
+  
+  .shadow-gaming {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  }
+}
